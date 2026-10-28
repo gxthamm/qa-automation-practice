@@ -1,0 +1,11 @@
+pytest
+pytest-xdist
+pytest-split
+pytest-repeat
+pytest-playwright
+playwright
+behave
+allure-behave
+requests
+responses
+mutmut<3

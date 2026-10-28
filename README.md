@@ -21,7 +21,7 @@
 ```bash
 python -m venv .venv
 .venv\Scripts\activate        # Windows
-pip install pytest pytest-xdist pytest-split pytest-repeat pytest-playwright playwright behave allure-behave requests responses "mutmut<3"
+pip install -r requirements.txt
 playwright install chromium
 ```
 
