@@ -1,0 +1,513 @@
+[
+  {
+    "label": "task1_broken_series1",
+    "args": "broken/test_task1_timing.py --count=20 --tb=no -q",
+    "comment": "",
+    "seconds": 38.33,
+    "failed": 2,
+    "passed": 18,
+    "failed_names": [
+      "FAILED broken/test_task1_timing.py::test_order_is_placed[chromium-9-20] - ass...",
+      "FAILED broken/test_task1_timing.py::test_order_is_placed[chromium-10-20] - as..."
+    ],
+    "tail": [
+      "FAILED broken/test_task1_timing.py::test_order_is_placed[chromium-9-20] - ass...",
+      "FAILED broken/test_task1_timing.py::test_order_is_placed[chromium-10-20] - as...",
+      "2 failed, 18 passed, 1 warning in 37.18s"
+    ]
+  },
+  {
+    "label": "task1_broken_series2",
+    "args": "broken/test_task1_timing.py --count=20 --tb=no -q",
+    "comment": "",
+    "seconds": 39.03,
+    "failed": 6,
+    "passed": 14,
+    "failed_names": [
+      "FAILED broken/test_task1_timing.py::test_order_is_placed[chromium-1-20] - ass...",
+      "FAILED broken/test_task1_timing.py::test_order_is_placed[chromium-3-20] - ass...",
+      "FAILED broken/test_task1_timing.py::test_order_is_placed[chromium-5-20] - ass...",
+      "FAILED broken/test_task1_timing.py::test_order_is_placed[chromium-6-20] - ass...",
+      "FAILED broken/test_task1_timing.py::test_order_is_placed[chromium-13-20] - as...",
+      "FAILED broken/test_task1_timing.py::test_order_is_placed[chromium-15-20] - as..."
+    ],
+    "tail": [
+      "FAILED broken/test_task1_timing.py::test_order_is_placed[chromium-13-20] - as...",
+      "FAILED broken/test_task1_timing.py::test_order_is_placed[chromium-15-20] - as...",
+      "6 failed, 14 passed, 1 warning in 37.98s"
+    ]
+  },
+  {
+    "label": "task1_broken_series3",
+    "args": "broken/test_task1_timing.py --count=20 --tb=no -q",
+    "comment": "",
+    "seconds": 39.27,
+    "failed": 5,
+    "passed": 15,
+    "failed_names": [
+      "FAILED broken/test_task1_timing.py::test_order_is_placed[chromium-2-20] - ass...",
+      "FAILED broken/test_task1_timing.py::test_order_is_placed[chromium-3-20] - ass...",
+      "FAILED broken/test_task1_timing.py::test_order_is_placed[chromium-10-20] - as...",
+      "FAILED broken/test_task1_timing.py::test_order_is_placed[chromium-16-20] - as...",
+      "FAILED broken/test_task1_timing.py::test_order_is_placed[chromium-17-20] - as..."
+    ],
+    "tail": [
+      "FAILED broken/test_task1_timing.py::test_order_is_placed[chromium-16-20] - as...",
+      "FAILED broken/test_task1_timing.py::test_order_is_placed[chromium-17-20] - as...",
+      "5 failed, 15 passed, 1 warning in 38.21s"
+    ]
+  },
+  {
+    "label": "task1_broken_error",
+    "args": "broken/test_task1_timing.py --count=20 -x -q",
+    "comment": "текст ошибки первого падения",
+    "seconds": 5.86,
+    "failed": 1,
+    "passed": 1,
+    "failed_names": [
+      "FAILED broken/test_task1_timing.py::test_order_is_placed[chromium-2-20] - ass..."
+    ],
+    "tail": [
+      "FAILED broken/test_task1_timing.py::test_order_is_placed[chromium-2-20] - ass...",
+      "!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!",
+      "1 failed, 1 passed, 1 warning in 4.84s"
+    ]
+  },
+  {
+    "label": "task2_fixed_series1",
+    "args": "tests/test_task1_timing.py --count=20 --tb=no -q",
+    "comment": "",
+    "seconds": 36.56,
+    "failed": 0,
+    "passed": 20,
+    "failed_names": [],
+    "tail": [
+      "    fixturefunc = resolve_fixture_function(fixturedef, request)",
+      "-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html",
+      "20 passed, 1 warning in 35.45s"
+    ]
+  },
+  {
+    "label": "task2_fixed_series2",
+    "args": "tests/test_task1_timing.py --count=20 --tb=no -q",
+    "comment": "",
+    "seconds": 37.1,
+    "failed": 0,
+    "passed": 20,
+    "failed_names": [],
+    "tail": [
+      "    fixturefunc = resolve_fixture_function(fixturedef, request)",
+      "-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html",
+      "20 passed, 1 warning in 36.15s"
+    ]
+  },
+  {
+    "label": "task2_fixed_series3",
+    "args": "tests/test_task1_timing.py --count=20 --tb=no -q",
+    "comment": "",
+    "seconds": 35.8,
+    "failed": 0,
+    "passed": 20,
+    "failed_names": [],
+    "tail": [
+      "    fixturefunc = resolve_fixture_function(fixturedef, request)",
+      "-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html",
+      "20 passed, 1 warning in 34.95s"
+    ]
+  },
+  {
+    "label": "task2_timeout_1000",
+    "args": "tests/test_task1_timing.py --count=20 --tb=no -q",
+    "comment": "эксперимент с таймаутом 1000 мс",
+    "seconds": 26.17,
+    "failed": 15,
+    "passed": 5,
+    "failed_names": [
+      "FAILED tests/test_task1_timing.py::test_order_is_placed[chromium-1-20] - Asse...",
+      "FAILED tests/test_task1_timing.py::test_order_is_placed[chromium-2-20] - Asse...",
+      "FAILED tests/test_task1_timing.py::test_order_is_placed[chromium-3-20] - Asse...",
+      "FAILED tests/test_task1_timing.py::test_order_is_placed[chromium-4-20] - Asse...",
+      "FAILED tests/test_task1_timing.py::test_order_is_placed[chromium-5-20] - Asse...",
+      "FAILED tests/test_task1_timing.py::test_order_is_placed[chromium-6-20] - Asse...",
+      "FAILED tests/test_task1_timing.py::test_order_is_placed[chromium-7-20] - Asse...",
+      "FAILED tests/test_task1_timing.py::test_order_is_placed[chromium-8-20] - Asse...",
+      "FAILED tests/test_task1_timing.py::test_order_is_placed[chromium-10-20] - Ass...",
+      "FAILED tests/test_task1_timing.py::test_order_is_placed[chromium-13-20] - Ass...",
+      "FAILED tests/test_task1_timing.py::test_order_is_placed[chromium-14-20] - Ass...",
+      "FAILED tests/test_task1_timing.py::test_order_is_placed[chromium-15-20] - Ass...",
+      "FAILED tests/test_task1_timing.py::test_order_is_placed[chromium-16-20] - Ass...",
+      "FAILED tests/test_task1_timing.py::test_order_is_placed[chromium-19-20] - Ass...",
+      "FAILED tests/test_task1_timing.py::test_order_is_placed[chromium-20-20] - Ass..."
+    ],
+    "tail": [
+      "FAILED tests/test_task1_timing.py::test_order_is_placed[chromium-19-20] - Ass...",
+      "FAILED tests/test_task1_timing.py::test_order_is_placed[chromium-20-20] - Ass...",
+      "15 failed, 5 passed, 1 warning in 25.15s"
+    ]
+  },
+  {
+    "label": "task3_broken_all",
+    "args": "broken/test_task3_state.py --tb=no -q",
+    "comment": "",
+    "seconds": 16.33,
+    "failed": 2,
+    "passed": 1,
+    "failed_names": [
+      "FAILED broken/test_task3_state.py::test_list_has_one_item[chromium] - Asserti...",
+      "FAILED broken/test_task3_state.py::test_list_is_empty_on_first_visit[chromium]"
+    ],
+    "tail": [
+      "FAILED broken/test_task3_state.py::test_list_has_one_item[chromium] - Asserti...",
+      "FAILED broken/test_task3_state.py::test_list_is_empty_on_first_visit[chromium]",
+      "2 failed, 1 passed, 1 warning in 15.22s"
+    ]
+  },
+  {
+    "label": "task3_broken_only_counter",
+    "args": "broken/test_task3_state.py -k counter --tb=no -q",
+    "comment": "",
+    "seconds": 4.45,
+    "failed": 0,
+    "passed": 1,
+    "failed_names": [],
+    "tail": [
+      "    fixturefunc = resolve_fixture_function(fixturedef, request)",
+      "-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html",
+      "1 passed, 2 deselected, 1 warning in 3.51s"
+    ]
+  },
+  {
+    "label": "task3_broken_only_one_item",
+    "args": "broken/test_task3_state.py -k one_item --tb=no -q",
+    "comment": "",
+    "seconds": 2.94,
+    "failed": 0,
+    "passed": 1,
+    "failed_names": [],
+    "tail": [
+      "    fixturefunc = resolve_fixture_function(fixturedef, request)",
+      "-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html",
+      "1 passed, 2 deselected, 1 warning in 2.12s"
+    ]
+  },
+  {
+    "label": "task3_broken_only_empty",
+    "args": "broken/test_task3_state.py -k empty --tb=no -q",
+    "comment": "",
+    "seconds": 2.33,
+    "failed": 0,
+    "passed": 1,
+    "failed_names": [],
+    "tail": [
+      "    fixturefunc = resolve_fixture_function(fixturedef, request)",
+      "-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html",
+      "1 passed, 2 deselected, 1 warning in 1.33s"
+    ]
+  },
+  {
+    "label": "task3_broken_parallel1",
+    "args": "broken/test_task3_state.py -n 3 --tb=no -q -rf",
+    "comment": "",
+    "seconds": 10.78,
+    "failed": 1,
+    "passed": 2,
+    "failed_names": [
+      "FAILED broken/test_task3_state.py::test_list_has_one_item[chromium] - Asserti..."
+    ],
+    "tail": [
+      "=========================== short test summary info ===========================",
+      "FAILED broken/test_task3_state.py::test_list_has_one_item[chromium] - Asserti...",
+      "1 failed, 2 passed, 3 warnings in 9.52s"
+    ]
+  },
+  {
+    "label": "task3_broken_parallel2",
+    "args": "broken/test_task3_state.py -n 3 --tb=no -q -rf",
+    "comment": "",
+    "seconds": 10.81,
+    "failed": 1,
+    "passed": 2,
+    "failed_names": [
+      "FAILED broken/test_task3_state.py::test_list_has_one_item[chromium] - Asserti..."
+    ],
+    "tail": [
+      "=========================== short test summary info ===========================",
+      "FAILED broken/test_task3_state.py::test_list_has_one_item[chromium] - Asserti...",
+      "1 failed, 2 passed, 3 warnings in 9.55s"
+    ]
+  },
+  {
+    "label": "task3_broken_parallel3",
+    "args": "broken/test_task3_state.py -n 3 --tb=no -q -rf",
+    "comment": "",
+    "seconds": 10.99,
+    "failed": 1,
+    "passed": 2,
+    "failed_names": [
+      "FAILED broken/test_task3_state.py::test_counter_shows_one[chromium] - Asserti..."
+    ],
+    "tail": [
+      "=========================== short test summary info ===========================",
+      "FAILED broken/test_task3_state.py::test_counter_shows_one[chromium] - Asserti...",
+      "1 failed, 2 passed, 3 warnings in 10.09s"
+    ]
+  },
+  {
+    "label": "task3_broken_parallel4",
+    "args": "broken/test_task3_state.py -n 3 --tb=no -q -rf",
+    "comment": "",
+    "seconds": 10.43,
+    "failed": 1,
+    "passed": 2,
+    "failed_names": [
+      "FAILED broken/test_task3_state.py::test_list_has_one_item[chromium] - Asserti..."
+    ],
+    "tail": [
+      "=========================== short test summary info ===========================",
+      "FAILED broken/test_task3_state.py::test_list_has_one_item[chromium] - Asserti...",
+      "1 failed, 2 passed, 3 warnings in 9.58s"
+    ]
+  },
+  {
+    "label": "task3_broken_parallel5",
+    "args": "broken/test_task3_state.py -n 3 --tb=no -q -rf",
+    "comment": "",
+    "seconds": 10.83,
+    "failed": 1,
+    "passed": 2,
+    "failed_names": [
+      "FAILED broken/test_task3_state.py::test_list_has_one_item[chromium] - Asserti..."
+    ],
+    "tail": [
+      "=========================== short test summary info ===========================",
+      "FAILED broken/test_task3_state.py::test_list_has_one_item[chromium] - Asserti...",
+      "1 failed, 2 passed, 3 warnings in 9.59s"
+    ]
+  },
+  {
+    "label": "task3_fixed_parallel1",
+    "args": "tests/test_task3_state.py -n 3 --tb=no -q",
+    "comment": "",
+    "seconds": 5.36,
+    "failed": 0,
+    "passed": 3,
+    "failed_names": [],
+    "tail": [
+      "    fixturefunc = resolve_fixture_function(fixturedef, request)",
+      "-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html",
+      "3 passed, 3 warnings in 4.36s"
+    ]
+  },
+  {
+    "label": "task3_fixed_parallel2",
+    "args": "tests/test_task3_state.py -n 3 --tb=no -q",
+    "comment": "",
+    "seconds": 4.16,
+    "failed": 0,
+    "passed": 3,
+    "failed_names": [],
+    "tail": [
+      "    fixturefunc = resolve_fixture_function(fixturedef, request)",
+      "-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html",
+      "3 passed, 3 warnings in 3.28s"
+    ]
+  },
+  {
+    "label": "task3_fixed_parallel3",
+    "args": "tests/test_task3_state.py -n 3 --tb=no -q",
+    "comment": "",
+    "seconds": 5.94,
+    "failed": 0,
+    "passed": 3,
+    "failed_names": [],
+    "tail": [
+      "    fixturefunc = resolve_fixture_function(fixturedef, request)",
+      "-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html",
+      "3 passed, 3 warnings in 4.83s"
+    ]
+  },
+  {
+    "label": "task3_fixed_parallel4",
+    "args": "tests/test_task3_state.py -n 3 --tb=no -q",
+    "comment": "",
+    "seconds": 4.84,
+    "failed": 0,
+    "passed": 3,
+    "failed_names": [],
+    "tail": [
+      "    fixturefunc = resolve_fixture_function(fixturedef, request)",
+      "-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html",
+      "3 passed, 3 warnings in 3.78s"
+    ]
+  },
+  {
+    "label": "task3_fixed_parallel5",
+    "args": "tests/test_task3_state.py -n 3 --tb=no -q",
+    "comment": "",
+    "seconds": 4.58,
+    "failed": 0,
+    "passed": 3,
+    "failed_names": [],
+    "tail": [
+      "    fixturefunc = resolve_fixture_function(fixturedef, request)",
+      "-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html",
+      "3 passed, 3 warnings in 3.32s"
+    ]
+  },
+  {
+    "label": "task3_fixed_all",
+    "args": "tests/test_task3_state.py --tb=no -q",
+    "comment": "",
+    "seconds": 5.25,
+    "failed": 0,
+    "passed": 3,
+    "failed_names": [],
+    "tail": [
+      "    fixturefunc = resolve_fixture_function(fixturedef, request)",
+      "-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html",
+      "3 passed, 1 warning in 4.29s"
+    ]
+  },
+  {
+    "label": "task4_broken_series1",
+    "args": "broken/test_task4_locators.py --count=20 --tb=no -q",
+    "comment": "",
+    "seconds": 85.77,
+    "failed": 13,
+    "passed": 7,
+    "failed_names": [
+      "FAILED broken/test_task4_locators.py::test_order_button_by_position[chromium-1-20]",
+      "FAILED broken/test_task4_locators.py::test_order_button_by_position[chromium-3-20]",
+      "FAILED broken/test_task4_locators.py::test_order_button_by_position[chromium-6-20]",
+      "FAILED broken/test_task4_locators.py::test_order_button_by_position[chromium-7-20]",
+      "FAILED broken/test_task4_locators.py::test_order_button_by_position[chromium-8-20]",
+      "FAILED broken/test_task4_locators.py::test_order_button_by_position[chromium-9-20]",
+      "FAILED broken/test_task4_locators.py::test_order_button_by_position[chromium-10-20]",
+      "FAILED broken/test_task4_locators.py::test_order_button_by_position[chromium-12-20]",
+      "FAILED broken/test_task4_locators.py::test_order_button_by_position[chromium-13-20]",
+      "FAILED broken/test_task4_locators.py::test_order_button_by_position[chromium-16-20]",
+      "FAILED broken/test_task4_locators.py::test_order_button_by_position[chromium-17-20]",
+      "FAILED broken/test_task4_locators.py::test_order_button_by_position[chromium-18-20]",
+      "FAILED broken/test_task4_locators.py::test_order_button_by_position[chromium-19-20]"
+    ],
+    "tail": [
+      "FAILED broken/test_task4_locators.py::test_order_button_by_position[chromium-18-20]",
+      "FAILED broken/test_task4_locators.py::test_order_button_by_position[chromium-19-20]",
+      "13 failed, 7 passed, 1 warning in 84.67s (0:01:24)"
+    ]
+  },
+  {
+    "label": "task4_broken_series2",
+    "args": "broken/test_task4_locators.py --count=20 --tb=no -q",
+    "comment": "",
+    "seconds": 62.16,
+    "failed": 6,
+    "passed": 14,
+    "failed_names": [
+      "FAILED broken/test_task4_locators.py::test_order_button_by_position[chromium-2-20]",
+      "FAILED broken/test_task4_locators.py::test_order_button_by_position[chromium-9-20]",
+      "FAILED broken/test_task4_locators.py::test_order_button_by_position[chromium-11-20]",
+      "FAILED broken/test_task4_locators.py::test_order_button_by_position[chromium-15-20]",
+      "FAILED broken/test_task4_locators.py::test_order_button_by_position[chromium-16-20]",
+      "FAILED broken/test_task4_locators.py::test_order_button_by_position[chromium-18-20]"
+    ],
+    "tail": [
+      "FAILED broken/test_task4_locators.py::test_order_button_by_position[chromium-16-20]",
+      "FAILED broken/test_task4_locators.py::test_order_button_by_position[chromium-18-20]",
+      "6 failed, 14 passed, 1 warning in 60.90s (0:01:00)"
+    ]
+  },
+  {
+    "label": "task4_broken_error",
+    "args": "broken/test_task4_locators.py --count=20 -x -q",
+    "comment": "текст ошибки первого падения",
+    "seconds": 7.99,
+    "failed": 1,
+    "passed": 0,
+    "failed_names": [
+      "FAILED broken/test_task4_locators.py::test_order_button_by_position[chromium-1-20]"
+    ],
+    "tail": [
+      "FAILED broken/test_task4_locators.py::test_order_button_by_position[chromium-1-20]",
+      "!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!",
+      "1 failed, 1 warning in 6.84s"
+    ]
+  },
+  {
+    "label": "task4_fixed_series",
+    "args": "tests/test_task4_locators.py --count=20 --tb=no -q",
+    "comment": "",
+    "seconds": 34.48,
+    "failed": 0,
+    "passed": 20,
+    "failed_names": [],
+    "tail": [
+      "    fixturefunc = resolve_fixture_function(fixturedef, request)",
+      "-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html",
+      "20 passed, 1 warning in 33.39s"
+    ]
+  },
+  {
+    "label": "task5_demo_10",
+    "args": "broken/test_task5_demo.py -m quarantine --count=10 --tb=no -q",
+    "comment": "",
+    "seconds": 20.11,
+    "failed": 4,
+    "passed": 6,
+    "failed_names": [
+      "FAILED broken/test_task5_demo.py::test_order_is_placed[chromium-3-10] - asser...",
+      "FAILED broken/test_task5_demo.py::test_order_is_placed[chromium-6-10] - asser...",
+      "FAILED broken/test_task5_demo.py::test_order_is_placed[chromium-8-10] - asser...",
+      "FAILED broken/test_task5_demo.py::test_order_is_placed[chromium-9-10] - asser..."
+    ],
+    "tail": [
+      "FAILED broken/test_task5_demo.py::test_order_is_placed[chromium-8-10] - asser...",
+      "FAILED broken/test_task5_demo.py::test_order_is_placed[chromium-9-10] - asser...",
+      "4 failed, 6 passed, 1 warning in 19.10s"
+    ]
+  },
+  {
+    "label": "task5_main_without_quarantine",
+    "args": "tests -m not quarantine --tb=short -q",
+    "comment": "",
+    "seconds": 11.73,
+    "failed": 0,
+    "passed": 6,
+    "failed_names": [],
+    "tail": [
+      "    fixturefunc = resolve_fixture_function(fixturedef, request)",
+      "-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html",
+      "6 passed, 1 warning in 10.49s"
+    ]
+  },
+  {
+    "label": "task5_quarantine_10",
+    "args": "broken/test_task5_demo.py -m quarantine --count=10 --tb=no -q",
+    "comment": "",
+    "seconds": 20.4,
+    "failed": 1,
+    "passed": 9,
+    "failed_names": [
+      "FAILED broken/test_task5_demo.py::test_order_is_placed[chromium-6-10] - asser..."
+    ],
+    "tail": [
+      "=========================== short test summary info ===========================",
+      "FAILED broken/test_task5_demo.py::test_order_is_placed[chromium-6-10] - asser...",
+      "1 failed, 9 passed, 1 warning in 19.31s"
+    ]
+  },
+  {
+    "label": "task5_fixed_20",
+    "args": "tests/test_task5_demo.py --count=20 --tb=no -q",
+    "comment": "",
+    "seconds": 35.17,
+    "failed": 0,
+    "passed": 20,
+    "failed_names": [],
+    "tail": [
+      "    fixturefunc = resolve_fixture_function(fixturedef, request)",
+      "-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html",
+      "20 passed, 1 warning in 34.30s"
+    ]
+  }
+]

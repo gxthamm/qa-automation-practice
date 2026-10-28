@@ -1,0 +1,92 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  behave:
+    name: behave UI (работа 1)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 01-behave-automation
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: pip install behave playwright allure-behave
+      - run: playwright install --with-deps chromium
+      - run: behave features
+
+  parallel:
+    name: pytest-split shard ${{ matrix.shard }} (работа 2)
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4]
+    defaults:
+      run:
+        working-directory: 02-parallel-testing
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: pip install pytest pytest-xdist pytest-split
+      - name: shard ${{ matrix.shard }} of 4
+        run: >
+          pytest -q
+          --splits 4 --group ${{ matrix.shard }}
+          --splitting-algorithm least_duration
+          --ignore=tests/test_profile.py --ignore=broken
+
+  flaky:
+    name: flaky suite (работа 3)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 03-flaky-tests
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: pip install pytest pytest-playwright pytest-repeat pytest-xdist
+      - run: playwright install --with-deps chromium
+      - name: основной набор без карантина
+        run: pytest tests -m "not quarantine" -q
+
+  mutmut:
+    name: mutmut MSI (работа 4)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 04-mutmut
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: pip install pytest "mutmut<3"
+      - run: python -m pytest -q
+      - run: python -m mutmut run
+      - run: python -m mutmut results
+
+  subcutaneous:
+    name: подкожные тесты (работа 6)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 06-subcutaneous-tests
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: pip install pytest requests responses
+      - run: python -m pytest -q

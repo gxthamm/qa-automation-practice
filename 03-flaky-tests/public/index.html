@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Магазин книг</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; }
+    .container { max-width: 520px; margin: 24px auto; }
+    .card { background: #fff; padding: 16px; margin-bottom: 16px; border-radius: 8px; }
+    .promo { background: #ffe08a; padding: 12px; margin-bottom: 16px; border-radius: 8px; }
+    button { padding: 8px 16px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Магазин книг</h1>
+    <div class="card">
+      <p>Книга «Тестирование ПО», 500 ₽</p>
+      <button data-testid="order-btn">Оформить заказ</button>
+      <p data-testid="status"></p>
+      <p data-testid="result" hidden></p>
+    </div>
+    <div class="card">
+      <p data-testid="orders-count">Заказов: …</p>
+      <ul id="orders"></ul>
+    </div>
+  </div>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const user = params.get('user') || 'guest';
+    const promo = params.get('promo');
+
+    // Акция показывается не всем: при promo=random примерно каждому второму
+    if (promo === 'on' || (promo === 'random' && Math.random() < 0.5)) {
+      const banner = document.createElement('div');
+      banner.className = 'promo';
+      banner.textContent = 'Акция: скидка 10% на все книги!';
+      document.querySelector('.container').prepend(banner);
+    }
+
+    const api = '/api/orders?user=' + encodeURIComponent(user);
+
+    function render(orders) {
+      document.querySelector('[data-testid="orders-count"]').textContent = 'Заказов: ' + orders.length;
+      const list = document.getElementById('orders');
+      list.innerHTML = '';
+      for (const order of orders) {
+        const li = document.createElement('li');
+        li.textContent = 'Заказ №' + order.id + ': ' + order.item;
+        list.appendChild(li);
+      }
+    }
+
+    async function loadOrders() {
+      const res = await fetch(api);
+      render(await res.json());
+    }
+
+    document.querySelector('[data-testid="order-btn"]').addEventListener('click', async () => {
+      const status = document.querySelector('[data-testid="status"]');
+      const result = document.querySelector('[data-testid="result"]');
+      result.hidden = true;
+      status.textContent = 'Обработка заказа…';
+      const res = await fetch(api, { method: 'POST' });
+      const order = await res.json();
+      status.textContent = '';
+      result.textContent = 'Спасибо за заказ №' + order.id;
+      result.hidden = false;
+      await loadOrders();
+    });
+
+    loadOrders();
+  </script>
+</body>
+</html>
