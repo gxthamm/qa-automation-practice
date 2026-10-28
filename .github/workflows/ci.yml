@@ -76,6 +76,7 @@ jobs:
       - run: python -m pytest -q
       - run: python -m mutmut run
       - run: python -m mutmut results
+        if: always()
 
   subcutaneous:
     name: подкожные тесты (работа 6)
